@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="structservo__config" kind="struct" language="C++" prot="public">
+    <compoundname>servo_config</compoundname>
+    <includes refid="servo_8h" local="no">servo.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structservo__config_1ae18a1d7cfaeb5c16cf4717d54b264954" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>servo_config::servo_pin</definition>
+        <argsstring></argsstring>
+        <name>servo_pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;servo_pin&apos; contains the gpio pin number to which servo is connected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="40" column="9" bodyfile="include/servo.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a0814099ee19c534c5562d80c2a538c48" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>servo_config::min_pulse_width</definition>
+        <argsstring></argsstring>
+        <name>min_pulse_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;min_pulse_width&apos; contains the minimum pulse width of servo motor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="41" column="9" bodyfile="include/servo.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a060926d062cfe3f26a5c424b3bed1dbf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>servo_config::max_pulse_width</definition>
+        <argsstring></argsstring>
+        <name>max_pulse_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;max_pulse_width&apos; contains the maximum pulse width of servo motor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="42" column="9" bodyfile="include/servo.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a982f4d5f00c3941bb9ed8cd2d66fe3b9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>servo_config::max_degree</definition>
+        <argsstring></argsstring>
+        <name>max_degree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;max_degree&apos; contains the maximum degree servo motor can rotate </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="43" column="9" bodyfile="include/servo.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a0404b532c9903812101610fb245540e8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int servo_config::angle</definition>
+        <argsstring></argsstring>
+        <name>angle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="44" column="9" bodyfile="include/servo.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a9bc55aeeec33b38b1920ac5c254965b6" prot="public" static="no" mutable="no">
+        <type>mcpwm_cmpr_handle_t</type>
+        <definition>servo_config::comparator</definition>
+        <argsstring></argsstring>
+        <name>comparator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;comparator&apos; is responsible for firing a compare event that generator listens </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="45" column="25" bodyfile="include/servo.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structservo__config_1a6c0a0b723af32f329c263f23e93fb8e9" prot="public" static="no" mutable="no">
+        <type>mcpwm_gen_handle_t</type>
+        <definition>servo_config::generator</definition>
+        <argsstring></argsstring>
+        <name>generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Member &apos;generator&apos; is responsible for driving gpio pin high or low </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/servo.h" line="46" column="24" bodyfile="include/servo.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure contains the configuration of servos. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/servo.h" line="38" column="1" bodyfile="include/servo.h" bodystart="39" bodyend="47"/>
+    <listofallmembers>
+      <member refid="structservo__config_1a0404b532c9903812101610fb245540e8" prot="public" virt="non-virtual"><scope>servo_config</scope><name>angle</name></member>
+      <member refid="structservo__config_1a9bc55aeeec33b38b1920ac5c254965b6" prot="public" virt="non-virtual"><scope>servo_config</scope><name>comparator</name></member>
+      <member refid="structservo__config_1a6c0a0b723af32f329c263f23e93fb8e9" prot="public" virt="non-virtual"><scope>servo_config</scope><name>generator</name></member>
+      <member refid="structservo__config_1a982f4d5f00c3941bb9ed8cd2d66fe3b9" prot="public" virt="non-virtual"><scope>servo_config</scope><name>max_degree</name></member>
+      <member refid="structservo__config_1a060926d062cfe3f26a5c424b3bed1dbf" prot="public" virt="non-virtual"><scope>servo_config</scope><name>max_pulse_width</name></member>
+      <member refid="structservo__config_1a0814099ee19c534c5562d80c2a538c48" prot="public" virt="non-virtual"><scope>servo_config</scope><name>min_pulse_width</name></member>
+      <member refid="structservo__config_1ae18a1d7cfaeb5c16cf4717d54b264954" prot="public" virt="non-virtual"><scope>servo_config</scope><name>servo_pin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

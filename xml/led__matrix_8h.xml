@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="led__matrix_8h" kind="file" language="C++">
+    <compoundname>led_matrix.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">esp_err.h</includes>
+    <includes local="yes">driver/spi_master.h</includes>
+    <includedby refid="led__matrix__font_8h" local="yes">include/led_matrix_font.h</includedby>
+    <includedby refid="sra__board_8h" local="yes">include/sra_board.h</includedby>
+    <includedby refid="led__matrix_8c" local="yes">src/led_matrix.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/led_matrix.h</label>
+        <link refid="led__matrix_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>driver/spi_master.h</label>
+      </node>
+      <node id="4">
+        <label>esp_err.h</label>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/led_matrix.h</label>
+        <link refid="led__matrix_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/led_matrix_font.h</label>
+        <link refid="led__matrix__font_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/sra_board.h</label>
+        <link refid="sra__board_8h"/>
+      </node>
+      <node id="5">
+        <label>src/led_matrix.c</label>
+        <link refid="led__matrix_8c"/>
+      </node>
+      <node id="4">
+        <label>src/led_matrix_font.c</label>
+        <link refid="led__matrix__font_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structled__matrix__t" prot="public">led_matrix_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="led__matrix_8h_1a99d69ec2e7c1f8abba1c35cb38394273" prot="public" static="no">
+        <name>LED_MATRIX_WIDTH</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="35" column="9" bodyfile="include/led_matrix.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="led__matrix_8h_1ad73833b88ed8a6f698beb0d47f974a67" prot="public" static="no">
+        <name>LED_MATRIX_HEIGHT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="36" column="9" bodyfile="include/led_matrix.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="led__matrix_8h_1a2275d9aa658bd88094e40191cec130c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_init</definition>
+        <argsstring>(led_matrix_t *matrix)</argsstring>
+        <name>led_matrix_init</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize using the SRA board MAX7219 pins and default brightness 4. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="56" column="11" bodyfile="src/led_matrix.c" bodystart="128" bodyend="190" declfile="include/led_matrix.h" declline="56" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1a7b2c90f75e918bf3634b4b4e15849aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_set_pixel</definition>
+        <argsstring>(led_matrix_t *matrix, uint8_t x, uint8_t y, bool on)</argsstring>
+        <name>led_matrix_set_pixel</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>on</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set one buffered pixel; x and y are in the range 0..7. Call show to update. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="59" column="11" bodyfile="src/led_matrix.c" bodystart="192" bodyend="206" declfile="include/led_matrix.h" declline="59" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1ad56d1e666bb005eef550257b6d72d13d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_set_row</definition>
+        <argsstring>(led_matrix_t *matrix, uint8_t row, uint8_t pixels)</argsstring>
+        <name>led_matrix_set_row</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pixels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set one buffered logical row. Bit 7 is the leftmost pixel; call show to update. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="63" column="11" bodyfile="src/led_matrix.c" bodystart="208" bodyend="217" declfile="include/led_matrix.h" declline="63" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1a6a23a40853ca37ef6908f2c90d3b64ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_draw_bitmap</definition>
+        <argsstring>(led_matrix_t *matrix, const uint8_t rows[LED_MATRIX_HEIGHT])</argsstring>
+        <name>led_matrix_draw_bitmap</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>rows</declname>
+          <array>[LED_MATRIX_HEIGHT]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy a top-to-bottom logical bitmap to the framebuffer. Call show to update. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="67" column="11" bodyfile="src/led_matrix.c" bodystart="219" bodyend="227" declfile="include/led_matrix.h" declline="67" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1a6f4ad0f5d0ec643436837b2d93bdc7ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_show</definition>
+        <argsstring>(const led_matrix_t *matrix)</argsstring>
+        <name>led_matrix_show</name>
+        <param>
+          <type>const <ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Map the logical framebuffer and update the display. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="71" column="11" bodyfile="src/led_matrix.c" bodystart="229" bodyend="241" declfile="include/led_matrix.h" declline="71" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1a2d99e4bbc7fd3e490deae23c7750fe84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_clear</definition>
+        <argsstring>(led_matrix_t *matrix)</argsstring>
+        <name>led_matrix_clear</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear the framebuffer and immediately blank the physical display. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="74" column="11" bodyfile="src/led_matrix.c" bodystart="243" bodyend="249" declfile="include/led_matrix.h" declline="74" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1ae92c6b7eea687bda832b852ed9ce477e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_set_brightness</definition>
+        <argsstring>(led_matrix_t *matrix, uint8_t brightness)</argsstring>
+        <name>led_matrix_set_brightness</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>brightness</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set intensity from 0 (dim) through 15 (bright). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="77" column="11" bodyfile="src/led_matrix.c" bodystart="251" bodyend="263" declfile="include/led_matrix.h" declline="77" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1af8243137c2247e63d5f83714eaee405a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_set_enabled</definition>
+        <argsstring>(const led_matrix_t *matrix, bool enabled)</argsstring>
+        <name>led_matrix_set_enabled</name>
+        <param>
+          <type>const <ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enable or shut down display scanning while retaining framebuffer contents. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="81" column="11" bodyfile="src/led_matrix.c" bodystart="265" bodyend="270" declfile="include/led_matrix.h" declline="81" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="led__matrix_8h_1a84de22b2c378c23354c7bc0e0b8590b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t led_matrix_deinit</definition>
+        <argsstring>(led_matrix_t *matrix)</argsstring>
+        <name>led_matrix_deinit</name>
+        <param>
+          <type><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref> *</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release the SPI device and pins from driver use. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/led_matrix.h" line="85" column="11" bodyfile="src/led_matrix.c" bodystart="272" bodyend="288" declfile="include/led_matrix.h" declline="85" declcolumn="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>MIT<sp/>License</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Society<sp/>of<sp/>Robotics<sp/>and<sp/>Automation</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LED_MATRIX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LED_MATRIX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_err.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;driver/spi_master.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="led__matrix_8h_1a99d69ec2e7c1f8abba1c35cb38394273" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LED_MATRIX_WIDTH<sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="led__matrix_8h_1ad73833b88ed8a6f698beb0d47f974a67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LED_MATRIX_HEIGHT<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structled__matrix__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49" refid="structled__matrix__t_1ac15d548e6f2765079625aef9cad8c22d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>framebuffer[<ref refid="led__matrix_8h_1ad73833b88ed8a6f698beb0d47f974a67" kindref="member">LED_MATRIX_HEIGHT</ref>];</highlight></codeline>
+<codeline lineno="50" refid="structled__matrix__t_1abc49071310f80dd42b085c8da9b4ea50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structled__matrix__t_1abc49071310f80dd42b085c8da9b4ea50" kindref="member">configured_brightness</ref>;</highlight></codeline>
+<codeline lineno="51" refid="structled__matrix__t_1a27d3744aa480cba16f784507e139c5d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>spi_device_handle_t<sp/><ref refid="structled__matrix__t_1a27d3744aa480cba16f784507e139c5d6" kindref="member">spi_device</ref>;</highlight></codeline>
+<codeline lineno="52" refid="structled__matrix__t_1a21416dc77edd557210b8fdd6a5d1c08b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structled__matrix__t_1a21416dc77edd557210b8fdd6a5d1c08b" kindref="member">initialized</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a2275d9aa658bd88094e40191cec130c6" kindref="member">led_matrix_init</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a7b2c90f75e918bf3634b4b4e15849aed" kindref="member">led_matrix_set_pixel</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>x,<sp/>uint8_t<sp/>y,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>on);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1ad56d1e666bb005eef550257b6d72d13d" kindref="member">led_matrix_set_row</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>row,<sp/>uint8_t<sp/>pixels);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a6a23a40853ca37ef6908f2c90d3b64ad" kindref="member">led_matrix_draw_bitmap</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>rows[<ref refid="led__matrix_8h_1ad73833b88ed8a6f698beb0d47f974a67" kindref="member">LED_MATRIX_HEIGHT</ref>]);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a6f4ad0f5d0ec643436837b2d93bdc7ad" kindref="member">led_matrix_show</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a2d99e4bbc7fd3e490deae23c7750fe84" kindref="member">led_matrix_clear</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1ae92c6b7eea687bda832b852ed9ce477e" kindref="member">led_matrix_set_brightness</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>brightness);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1af8243137c2247e63d5f83714eaee405a" kindref="member">led_matrix_set_enabled</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">esp_err_t<sp/><ref refid="led__matrix_8h_1a84de22b2c378c23354c7bc0e0b8590b0" kindref="member">led_matrix_deinit</ref>(<ref refid="structled__matrix__t" kindref="compound">led_matrix_t</ref><sp/>*matrix);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>LED_MATRIX_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/led_matrix.h"/>
+  </compounddef>
+</doxygen>

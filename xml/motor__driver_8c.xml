@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="motor__driver_8c" kind="file" language="C++">
+    <compoundname>motor_driver.c</compoundname>
+    <includes refid="motor__driver_8h" local="yes">motor_driver.h</includes>
+    <includes refid="utils_8h" local="yes">utils.h</includes>
+    <includes refid="pin__defs_8h" local="yes">pin_defs.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>mcpwm_interface.h</label>
+        <link refid="mcpwm__interface_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>motor_driver.h</label>
+        <link refid="motor__driver_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>pin_defs.h</label>
+        <link refid="pin__defs_8h"/>
+      </node>
+      <node id="7">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+      </node>
+      <node id="1">
+        <label>src/motor_driver.c</label>
+        <link refid="motor__driver_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>esp_err.h</label>
+      </node>
+      <node id="4">
+        <label>esp_log.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="motor__driver_8c_1a5a85b9c772bbeb480b209a3e6ea92b4c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;MOTOR&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motor_driver.c" line="29" column="19" bodyfile="src/motor_driver.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="motor__driver_8c_1a460a7194883ccd7f046426c678add94e" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int enabled_motor_driver_flag</definition>
+        <argsstring></argsstring>
+        <name>enabled_motor_driver_flag</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motor_driver.c" line="31" column="12" bodyfile="src/motor_driver.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="motor__driver_8c_1aa01c5af0716d82921a05fbce43c99ee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t enable_motor_driver</definition>
+        <argsstring>(motor_handle_t *motor, int motor_id)</argsstring>
+        <name>enable_motor_driver</name>
+        <param>
+          <type><ref refid="mcpwm__interface_8h_1a8e393520bb8d8a3f9e26ce6ae979fd91" kindref="member">motor_handle_t</ref> *</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>motor_id</declname>
+        </param>
+        <briefdescription>
+<para>Enable motor driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_handle_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor object handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set it as MOTOR_A_0, MOTOR_A_1 to select the appropriate motor to bind to the handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><itemizedlist>
+<listitem><para>ESP_OK: Success</para>
+</listitem><listitem><para>ESP_ERR_INVALID_ARG: Invalid argument</para>
+</listitem><listitem><para>ESP_FAIL: Failed </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motor_driver.c" line="33" column="11" bodyfile="src/motor_driver.c" bodystart="33" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="motor__driver_8c_1a6e1239d2fdeea80183763d4496bb1270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t set_motor_speed</definition>
+        <argsstring>(motor_handle_t motor, int direction, float speed)</argsstring>
+        <name>set_motor_speed</name>
+        <param>
+          <type><ref refid="mcpwm__interface_8h_1a8e393520bb8d8a3f9e26ce6ae979fd91" kindref="member">motor_handle_t</ref></type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motor_driver.c" line="56" column="11" bodyfile="src/motor_driver.c" bodystart="56" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="motor__driver_8c_1a54973c5524a0a71200564d15cb0114be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int get_motor_driver_status</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_driver_status</name>
+        <briefdescription>
+<para>Checks if the motor driver is engaged. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the motor driver is engaged, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motor_driver.c" line="76" column="5" bodyfile="src/motor_driver.c" bodystart="76" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>MIT<sp/>License</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/><sp/>2021<sp/>Society<sp/>of<sp/>Robotics<sp/>and<sp/>Automation</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="motor__driver_8h" kindref="compound">motor_driver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utils_8h" kindref="compound">utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pin__defs_8h" kindref="compound">pin_defs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="lvgl__helpers_8c_1afc3d101f633a076cc1ca84b85b6224b2" kindref="member">TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MOTOR&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enabled_motor_driver_flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">esp_err_t<sp/><ref refid="motor__driver_8c_1aa01c5af0716d82921a05fbce43c99ee6" kindref="member">enable_motor_driver</ref>(<ref refid="structmotor__t" kindref="compound">motor_handle_t</ref><sp/>*motor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>motor_id)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmotor__config__t" kindref="compound">motor_config_t</ref><sp/>motor_config;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(motor_id<sp/>==<sp/><ref refid="motor__driver_8h_1a60a0d0982603cefa4efa58450dd39104" kindref="member">MOTOR_A_0</ref>){</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1aaaf19a606b77fac6d97be5b1790971f9" kindref="member">pwma_gpio_num</ref><sp/>=<sp/><ref refid="pin__defs_8h_1ac593ad1d39cd26582a43e2bad09e1f16" kindref="member">MDA_NORMAL_IN_1</ref>,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1ae766ceb0d56dea9bda56f5c27b38ab81" kindref="member">pwmb_gpio_num</ref><sp/>=<sp/><ref refid="pin__defs_8h_1a8db1e560298f9cf45bf9359865670faa" kindref="member">MDA_NORMAL_IN_2</ref>,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1a6e272360273a3c788501b34828df8fd6" kindref="member">pwm_freq_hz</ref><sp/>=<sp/><ref refid="motor__driver_8h_1a6e8126ff5ecff090a1ad8fbe981a4b44" kindref="member">MCPWM_FREQ</ref>;<sp/></highlight><highlight class="comment">//<sp/>20kHz<sp/>PWM<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(motor_id<sp/>==<sp/><ref refid="motor__driver_8h_1ab115b64cb678fa39054d32dd04a0fbea" kindref="member">MOTOR_A_1</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1aaaf19a606b77fac6d97be5b1790971f9" kindref="member">pwma_gpio_num</ref><sp/>=<sp/><ref refid="pin__defs_8h_1a633480893ea2707e25a429eea0bbe34a" kindref="member">MDA_NORMAL_IN_3</ref>,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1ae766ceb0d56dea9bda56f5c27b38ab81" kindref="member">pwmb_gpio_num</ref><sp/>=<sp/><ref refid="pin__defs_8h_1a840ffe2f76fb68cf25a61bee430c8477" kindref="member">MDA_NORMAL_IN_4</ref>,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor_config.<ref refid="structmotor__config__t_1a6e272360273a3c788501b34828df8fd6" kindref="member">pwm_freq_hz</ref><sp/>=<sp/><ref refid="motor__driver_8h_1a6e8126ff5ecff090a1ad8fbe981a4b44" kindref="member">MCPWM_FREQ</ref>;<sp/></highlight><highlight class="comment">//<sp/>20kHz<sp/>PWM<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESP_LOGE(<ref refid="lvgl__helpers_8c_1afc3d101f633a076cc1ca84b85b6224b2" kindref="member">TAG</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>motor<sp/>id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_FAIL;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmotor__mcpwm__config__t" kindref="compound">motor_mcpwm_config_t</ref><sp/>motor_mcpwm_config;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>motor_mcpwm_config.<ref refid="structmotor__mcpwm__config__t_1a78260ba403f0b1b7206fdc7e0b227e7a" kindref="member">group_id</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>motor_mcpwm_config.<ref refid="structmotor__mcpwm__config__t_1ad375c245f9eae86a6fe53dacee3f320c" kindref="member">resolution_hz</ref><sp/>=<sp/><ref refid="motor__driver_8h_1aef25c062c18accc2650e496b7cf7e362" kindref="member">MCPWM_RESOLUTION</ref>;<sp/></highlight><highlight class="comment">//<sp/>10MHz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP_ERROR_CHECK(<ref refid="mcpwm__interface_8h_1a5604e0b69a2f829c0f4ea6234cd05cdb" kindref="member">motor_new_mcpwm_device</ref>(&amp;motor_config,<sp/>&amp;motor_mcpwm_config,<sp/>motor));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP_ERROR_CHECK((*motor)-&gt;enable(*motor));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>enabled_motor_driver_flag<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_OK;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">esp_err_t<sp/><ref refid="motor__driver_8c_1a6e1239d2fdeea80183763d4496bb1270" kindref="member">set_motor_speed</ref>(<ref refid="structmotor__t" kindref="compound">motor_handle_t</ref><sp/>motor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>map<sp/>is<sp/>used<sp/>to<sp/>map<sp/>the<sp/>speed<sp/>from<sp/>0-100<sp/>to<sp/>0-MCPWM_TICKS.<sp/>MCPWM_TICKS<sp/>is<sp/>the<sp/>resolution<sp/>of<sp/>the<sp/>pwm<sp/>signal.<sp/>It<sp/>is<sp/>calculated<sp/>as<sp/>MCPWM_TICKS<sp/>=<sp/>MCPWM_RESOLUTION<sp/>/<sp/>MCPWM_FREQ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>speed<sp/>=<sp/>(uint32_t)<ref refid="utils_8h_1a5dd929afde45581ef0588e30db9650f8" kindref="member">map</ref>(speed,<sp/>0,<sp/>100,<sp/>0,<sp/><ref refid="motor__driver_8h_1aef25c062c18accc2650e496b7cf7e362" kindref="member">MCPWM_RESOLUTION</ref><sp/>/<sp/><ref refid="motor__driver_8h_1a6e8126ff5ecff090a1ad8fbe981a4b44" kindref="member">MCPWM_FREQ</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(direction<sp/>==<sp/><ref refid="motor__driver_8h_1aecfc8cb31c77ff43036a88e475f0198d" kindref="member">MOTOR_FORWARD</ref>){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="structmotor__t_1a0a2ce097f8de1f837862f26fe3c3cac2" kindref="member">forward</ref>(motor);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="structmotor__t_1aa2bf878e84240b295d22be4ebe7070c6" kindref="member">set_speed</ref>(motor,<sp/>speed);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_OK;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(direction<sp/>==<sp/><ref refid="motor__driver_8h_1ae29c16906c059ef2615d54a3ee144763" kindref="member">MOTOR_BACKWARD</ref>){</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="structmotor__t_1a86d7562895cc446a0b8d93d7b080e31e" kindref="member">backwards</ref>(motor);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="structmotor__t_1aa2bf878e84240b295d22be4ebe7070c6" kindref="member">set_speed</ref>(motor,<sp/>speed);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_OK;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(direction<sp/>==<sp/><ref refid="motor__driver_8h_1aa61a6c32d7187d20f8ea4171b8bf8dd7" kindref="member">MOTOR_STOP</ref>){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="structmotor__t_1aa2bf878e84240b295d22be4ebe7070c6" kindref="member">set_speed</ref>(motor,<sp/>0);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_OK;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESP_LOGE(<ref refid="lvgl__helpers_8c_1afc3d101f633a076cc1ca84b85b6224b2" kindref="member">TAG</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>motor<sp/>direction&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ESP_FAIL;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="motor__driver_8c_1a54973c5524a0a71200564d15cb0114be" kindref="member">get_motor_driver_status</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>enabled_motor_driver_flag;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/motor_driver.c"/>
+  </compounddef>
+</doxygen>
