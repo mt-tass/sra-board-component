@@ -149,19 +149,21 @@ esp_err_t motor_new_mcpwm_device(const motor_config_t *motor_config, const motor
     generator_config.gen_gpio_num = motor_config->pwmb_gpio_num;
     ESP_GOTO_ON_ERROR(mcpwm_new_generator(mcpwm_motor->operator, &generator_config, &mcpwm_motor->genb), err, TAG, "create generator failed");
 
-     mcpwm_generator_set_actions_on_timer_event(mcpwm_motor->gena,
-            MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH),
-            MCPWM_GEN_TIMER_EVENT_ACTION_END());
-    mcpwm_generator_set_actions_on_compare_event(mcpwm_motor->gena,
-            MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, mcpwm_motor->cmpa, MCPWM_GEN_ACTION_LOW),
-            MCPWM_GEN_COMPARE_EVENT_ACTION_END());
-    mcpwm_generator_set_actions_on_timer_event(mcpwm_motor->genb,
-            MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH),
-            MCPWM_GEN_TIMER_EVENT_ACTION_END());
-    mcpwm_generator_set_actions_on_compare_event(mcpwm_motor->genb,
-            MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, mcpwm_motor->cmpb, MCPWM_GEN_ACTION_LOW),
-            MCPWM_GEN_COMPARE_EVENT_ACTION_END());
+    // Set generator A actions
+    ESP_GOTO_ON_ERROR(mcpwm_generator_set_action_on_timer_event(mcpwm_motor->gena,
+            MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)),
+            err, TAG, "set timer action for gena failed");
+    ESP_GOTO_ON_ERROR(mcpwm_generator_set_action_on_compare_event(mcpwm_motor->gena,
+            MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, mcpwm_motor->cmpa, MCPWM_GEN_ACTION_LOW)),
+            err, TAG, "set compare action for gena failed");
 
+    // Set generator B actions
+    ESP_GOTO_ON_ERROR(mcpwm_generator_set_action_on_timer_event(mcpwm_motor->genb,
+            MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)),
+            err, TAG, "set timer action for genb failed");
+    ESP_GOTO_ON_ERROR(mcpwm_generator_set_action_on_compare_event(mcpwm_motor->genb,
+            MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, mcpwm_motor->cmpb, MCPWM_GEN_ACTION_LOW)),
+            err, TAG, "set compare action for genb failed");
     mcpwm_motor->base.enable = motor_enable;
     mcpwm_motor->base.disable = motor_disable;
     mcpwm_motor->base.set_speed = motor_set_speed;
